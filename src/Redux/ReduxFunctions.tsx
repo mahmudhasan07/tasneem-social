@@ -45,23 +45,23 @@ const BookDemo = createAsyncThunk(
   }
 );
 
-// const CreateUser = createAsyncThunk(
-//   "createUser",
-//   async ({ data }: { data: CreateUserInterFace }) => {
-//     const axiosLink: AxiosInstance = useAxios();
-//     try {
-//       const res = await axiosLink.post("/users/create", data);
-//       return res.data;
-//     } catch (error: unknown) {
-//       console.log(error);
+const CreateUser = createAsyncThunk(
+  "createUser",
+  async ({ data }: { data: CreateUserInterFace }) => {
+    const axiosLink: AxiosInstance = useAxios();
+    try {
+      const res = await axiosLink.post("/users/create", data);
+      return res.data;
+    } catch (error: unknown) {
+      console.log(error);
 
-//       if (error instanceof AxiosError && error.response) {
-//         const errMessage = error.response.data.message;
-//         throw errMessage;
-//       }
-//     }
-//   }
-// );
+      if (error instanceof AxiosError && error.response) {
+        const errMessage = error.response.data.message;
+        throw errMessage;
+      }
+    }
+  }
+);
 
 // category
 // const GetCategory = createAsyncThunk(
