@@ -27,23 +27,23 @@ const initialState: AuthInterFace = {
 
 // const provider = useContext(ProviderSource)
 
-// const BookDemo = createAsyncThunk(
-//   "bookDemo",
-//   async ({ data }: { data: BookDemoInterFace }) => {
-//     const axiosLink: AxiosInstance = useAxios();
-//     try {
-//       const res = await axiosLink.post("/demobook/send", data);
-//       return res.data;
-//     } catch (error: unknown) {
-//       if (error instanceof AxiosError && error.response) {
-//         if (error instanceof AxiosError && error.response) {
-//           const errMessage = error.response.data.message;
-//           throw errMessage;
-//         }
-//       }
-//     }
-//   }
-// );
+const BookDemo = createAsyncThunk(
+  "bookDemo",
+  async ({ data }: { data: BookDemoInterFace }) => {
+    const axiosLink: AxiosInstance = useAxios();
+    try {
+      const res = await axiosLink.post("/demobook/send", data);
+      return res.data;
+    } catch (error: unknown) {
+      if (error instanceof AxiosError && error.response) {
+        if (error instanceof AxiosError && error.response) {
+          const errMessage = error.response.data.message;
+          throw errMessage;
+        }
+      }
+    }
+  }
+);
 
 // const CreateUser = createAsyncThunk(
 //   "createUser",
